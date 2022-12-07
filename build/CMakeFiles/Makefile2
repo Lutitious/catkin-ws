@@ -304,8 +304,8 @@ gtest/CMakeFiles/gmock.dir/clean:
 # Target rules for target gtest/CMakeFiles/gmock_main.dir
 
 # All Build rule for target.
-gtest/CMakeFiles/gmock_main.dir/all: googletest/CMakeFiles/gtest.dir/all
 gtest/CMakeFiles/gmock_main.dir/all: gtest/CMakeFiles/gmock.dir/all
+gtest/CMakeFiles/gmock_main.dir/all: googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f gtest/CMakeFiles/gmock_main.dir/build.make gtest/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f gtest/CMakeFiles/gmock_main.dir/build.make gtest/CMakeFiles/gmock_main.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rahul/catkin_ws/build/CMakeFiles --progress-num=3,4 "Built target gmock_main"

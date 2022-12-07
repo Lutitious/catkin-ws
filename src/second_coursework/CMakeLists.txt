@@ -66,11 +66,7 @@ add_service_files(
 #   Action2.action
 # )
 
-## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   std_msgs  # Or other packages containing msgs
-# )
+
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -104,7 +100,7 @@ add_service_files(
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES second_coursework
-#  CATKIN_DEPENDS other_catkin_pkg
+CATKIN_DEPENDS rospy message_runtime
 #  DEPENDS system_lib
 )
 

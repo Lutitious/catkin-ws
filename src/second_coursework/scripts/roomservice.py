@@ -16,12 +16,7 @@
 # with the room name as an argument.
 
 import rospy
+from second_coursework.srv import GetRoomCoord, GetRoomCoordResponse
 from geometry_msgs.msg import Point
-print("Starting roomservice node")
-
-def handle_get_room_coord(req):
-    print("Returning point for room " + req.room)
-    return Point(1, 1, 0)
-
 
 
