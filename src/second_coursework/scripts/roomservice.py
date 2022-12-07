@@ -17,14 +17,11 @@
 
 import rospy
 from geometry_msgs.msg import Point
-
 print("Starting roomservice node")
 
 def handle_get_room_coord(req):
     print("Returning point for room " + req.room)
     return Point(1, 1, 0)
 
-rospy.init_node('roomservice')
-s = rospy.Service('GetRoomCoord', GetRoomCoord, handle_get_room_coord)
-rospy.spin()
+
 
