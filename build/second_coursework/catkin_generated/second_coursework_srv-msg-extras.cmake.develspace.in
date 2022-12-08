@@ -1,2 +1,0 @@
-set(second_coursework_srv_MESSAGE_FILES "")
-set(second_coursework_srv_SERVICE_FILES "/home/rahul/catkin_ws/src/second_coursework/srv/GetRoomCoord.srv")
