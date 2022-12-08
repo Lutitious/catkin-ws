@@ -448,3 +448,4 @@ int main(void)
 }
 
 
+The system is: Linux - /bin/sh: 1: /usr/sbin/uname: not found - unknown
