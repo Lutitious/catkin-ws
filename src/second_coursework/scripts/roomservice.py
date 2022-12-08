@@ -7,10 +7,12 @@ from geometry_msgs.msg import Point
 class RoomCoord(object):
     def __init__(self):
         self.rooms = {
-            'kitchen': [Point(1, 1, 0), Point(2, 2, 0), Point(3, 3, 0), Point(4, 4, 0)],
-            'living_room': [Point(5, 5, 0), Point(6, 6, 0), Point(7, 7, 0), Point(8, 8, 0)],
-            'bedroom': [Point(9, 9, 0), Point(10, 10, 0), Point(11, 11, 0), Point(12, 12, 0)],
-            'bathroom': [Point(13, 13, 0), Point(14, 14, 0), Point(15, 15, 0), Point(16, 16, 0)]
+            'A': [Point(-5, 4, 0), Point(-4, 4, 0), Point(-5, 3, 0), Point(-4, 3, 0)],
+            'B': [Point(-1, 3, 0), Point(-2, 3, 0), Point(-1, 4, 0), Point(-2, 4, 0)],
+            'C': [Point(3, 3, 0), Point(3, 4, 0), Point(4, 3, 0), Point(4, 4, 0)],
+            'D': [Point(-5, -1, 0), Point(-4, -1, 0), Point(-5, -2, 0), Point(-4, -2, 0)],
+            'E': [Point(-1, -1, 0), Point(-2, -1, 0), Point(-1, -2, 0), Point(-2, -2, 0)],
+            'F': [Point(3, -2, 0), Point(3, -3, 0), Point(4, -2, 0), Point(4, -3, 0)]
         }
         self.room = None
         self.index = 0
