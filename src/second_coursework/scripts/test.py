@@ -18,7 +18,7 @@ class SearchClient(object):
     def run(self):
         # Create action goal
         goal = SearchGoal()
-        goal.roomName = "B"
+        goal.roomName = "D"
 
         # Send action goal to action server
         self.client.send_goal(goal)
