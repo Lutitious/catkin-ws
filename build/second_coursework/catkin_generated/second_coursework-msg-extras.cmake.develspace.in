@@ -1,2 +1,2 @@
-set(second_coursework_MESSAGE_FILES "")
+set(second_coursework_MESSAGE_FILES "/home/rahul/catkin_ws/devel/share/second_coursework/msg/SearchAction.msg;/home/rahul/catkin_ws/devel/share/second_coursework/msg/SearchActionGoal.msg;/home/rahul/catkin_ws/devel/share/second_coursework/msg/SearchActionResult.msg;/home/rahul/catkin_ws/devel/share/second_coursework/msg/SearchActionFeedback.msg;/home/rahul/catkin_ws/devel/share/second_coursework/msg/SearchGoal.msg;/home/rahul/catkin_ws/devel/share/second_coursework/msg/SearchResult.msg;/home/rahul/catkin_ws/devel/share/second_coursework/msg/SearchFeedback.msg")
 set(second_coursework_SERVICE_FILES "/home/rahul/catkin_ws/src/second_coursework/srv/GetRoomCoord.srv")

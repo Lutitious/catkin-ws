@@ -185,7 +185,7 @@ foreach(t ${second_coursework_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "geometry_msgs;rospy;smach;smach_ros")
+set(depends "geometry_msgs;rospy;smach;smach_ros;actionlib_msgs")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls

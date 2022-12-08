@@ -1,0 +1,170 @@
+; Auto-generated. Do not edit!
+
+
+(cl:in-package second_coursework-msg)
+
+
+;//! \htmlinclude SearchResult.msg.html
+
+(cl:defclass <SearchResult> (roslisp-msg-protocol:ros-message)
+  ((roomNames
+    :reader roomNames
+    :initarg :roomNames
+    :type (cl:vector cl:string)
+   :initform (cl:make-array 0 :element-type 'cl:string :initial-element ""))
+   (roomIds
+    :reader roomIds
+    :initarg :roomIds
+    :type (cl:vector cl:integer)
+   :initform (cl:make-array 0 :element-type 'cl:integer :initial-element 0))
+   (roomTimes
+    :reader roomTimes
+    :initarg :roomTimes
+    :type (cl:vector cl:real)
+   :initform (cl:make-array 0 :element-type 'cl:real :initial-element 0)))
+)
+
+(cl:defclass SearchResult (<SearchResult>)
+  ())
+
+(cl:defmethod cl:initialize-instance :after ((m <SearchResult>) cl:&rest args)
+  (cl:declare (cl:ignorable args))
+  (cl:unless (cl:typep m 'SearchResult)
+    (roslisp-msg-protocol:msg-deprecation-warning "using old message class name second_coursework-msg:<SearchResult> is deprecated: use second_coursework-msg:SearchResult instead.")))
+
+(cl:ensure-generic-function 'roomNames-val :lambda-list '(m))
+(cl:defmethod roomNames-val ((m <SearchResult>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader second_coursework-msg:roomNames-val is deprecated.  Use second_coursework-msg:roomNames instead.")
+  (roomNames m))
+
+(cl:ensure-generic-function 'roomIds-val :lambda-list '(m))
+(cl:defmethod roomIds-val ((m <SearchResult>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader second_coursework-msg:roomIds-val is deprecated.  Use second_coursework-msg:roomIds instead.")
+  (roomIds m))
+
+(cl:ensure-generic-function 'roomTimes-val :lambda-list '(m))
+(cl:defmethod roomTimes-val ((m <SearchResult>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader second_coursework-msg:roomTimes-val is deprecated.  Use second_coursework-msg:roomTimes instead.")
+  (roomTimes m))
+(cl:defmethod roslisp-msg-protocol:serialize ((msg <SearchResult>) ostream)
+  "Serializes a message object of type '<SearchResult>"
+  (cl:let ((__ros_arr_len (cl:length (cl:slot-value msg 'roomNames))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_arr_len) ostream))
+  (cl:map cl:nil #'(cl:lambda (ele) (cl:let ((__ros_str_len (cl:length ele)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_str_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_str_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_str_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_str_len) ostream))
+  (cl:map cl:nil #'(cl:lambda (c) (cl:write-byte (cl:char-code c) ostream)) ele))
+   (cl:slot-value msg 'roomNames))
+  (cl:let ((__ros_arr_len (cl:length (cl:slot-value msg 'roomIds))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_arr_len) ostream))
+  (cl:map cl:nil #'(cl:lambda (ele) (cl:write-byte (cl:ldb (cl:byte 8 0) ele) ostream)
+  (cl:write-byte (cl:ldb (cl:byte 8 8) ele) ostream)
+  (cl:write-byte (cl:ldb (cl:byte 8 16) ele) ostream)
+  (cl:write-byte (cl:ldb (cl:byte 8 24) ele) ostream))
+   (cl:slot-value msg 'roomIds))
+  (cl:let ((__ros_arr_len (cl:length (cl:slot-value msg 'roomTimes))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_arr_len) ostream))
+  (cl:map cl:nil #'(cl:lambda (ele) (cl:let ((__sec (cl:floor ele))
+        (__nsec (cl:round (cl:* 1e9 (cl:- ele (cl:floor ele))))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __sec) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __sec) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __sec) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __sec) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __nsec) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __nsec) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __nsec) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __nsec) ostream)))
+   (cl:slot-value msg 'roomTimes))
+)
+(cl:defmethod roslisp-msg-protocol:deserialize ((msg <SearchResult>) istream)
+  "Deserializes a message object of type '<SearchResult>"
+  (cl:let ((__ros_arr_len 0))
+    (cl:setf (cl:ldb (cl:byte 8 0) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 8) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 16) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 24) __ros_arr_len) (cl:read-byte istream))
+  (cl:setf (cl:slot-value msg 'roomNames) (cl:make-array __ros_arr_len))
+  (cl:let ((vals (cl:slot-value msg 'roomNames)))
+    (cl:dotimes (i __ros_arr_len)
+    (cl:let ((__ros_str_len 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) __ros_str_len) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) __ros_str_len) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) __ros_str_len) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) __ros_str_len) (cl:read-byte istream))
+      (cl:setf (cl:aref vals i) (cl:make-string __ros_str_len))
+      (cl:dotimes (__ros_str_idx __ros_str_len msg)
+        (cl:setf (cl:char (cl:aref vals i) __ros_str_idx) (cl:code-char (cl:read-byte istream))))))))
+  (cl:let ((__ros_arr_len 0))
+    (cl:setf (cl:ldb (cl:byte 8 0) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 8) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 16) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 24) __ros_arr_len) (cl:read-byte istream))
+  (cl:setf (cl:slot-value msg 'roomIds) (cl:make-array __ros_arr_len))
+  (cl:let ((vals (cl:slot-value msg 'roomIds)))
+    (cl:dotimes (i __ros_arr_len)
+    (cl:setf (cl:ldb (cl:byte 8 0) (cl:aref vals i)) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 8) (cl:aref vals i)) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 16) (cl:aref vals i)) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 24) (cl:aref vals i)) (cl:read-byte istream)))))
+  (cl:let ((__ros_arr_len 0))
+    (cl:setf (cl:ldb (cl:byte 8 0) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 8) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 16) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 24) __ros_arr_len) (cl:read-byte istream))
+  (cl:setf (cl:slot-value msg 'roomTimes) (cl:make-array __ros_arr_len))
+  (cl:let ((vals (cl:slot-value msg 'roomTimes)))
+    (cl:dotimes (i __ros_arr_len)
+    (cl:let ((__sec 0) (__nsec 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) __sec) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) __sec) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) __sec) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) __sec) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 0) __nsec) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) __nsec) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) __nsec) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) __nsec) (cl:read-byte istream))
+      (cl:setf (cl:aref vals i) (cl:+ (cl:coerce __sec 'cl:double-float) (cl:/ __nsec 1e9)))))))
+  msg
+)
+(cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql '<SearchResult>)))
+  "Returns string type for a message object of type '<SearchResult>"
+  "second_coursework/SearchResult")
+(cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql 'SearchResult)))
+  "Returns string type for a message object of type 'SearchResult"
+  "second_coursework/SearchResult")
+(cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<SearchResult>)))
+  "Returns md5sum for a message object of type '<SearchResult>"
+  "3b9694de92de2396031c990177eb077c")
+(cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'SearchResult)))
+  "Returns md5sum for a message object of type 'SearchResult"
+  "3b9694de92de2396031c990177eb077c")
+(cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<SearchResult>)))
+  "Returns full string definition for message of type '<SearchResult>"
+  (cl:format cl:nil "# ====== DO NOT MODIFY! AUTOGENERATED FROM AN ACTION DEFINITION ======~%string[] roomNames~%uint32[] roomIds~%time[] roomTimes~%~%~%"))
+(cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'SearchResult)))
+  "Returns full string definition for message of type 'SearchResult"
+  (cl:format cl:nil "# ====== DO NOT MODIFY! AUTOGENERATED FROM AN ACTION DEFINITION ======~%string[] roomNames~%uint32[] roomIds~%time[] roomTimes~%~%~%"))
+(cl:defmethod roslisp-msg-protocol:serialization-length ((msg <SearchResult>))
+  (cl:+ 0
+     4 (cl:reduce #'cl:+ (cl:slot-value msg 'roomNames) :key #'(cl:lambda (ele) (cl:declare (cl:ignorable ele)) (cl:+ 4 (cl:length ele))))
+     4 (cl:reduce #'cl:+ (cl:slot-value msg 'roomIds) :key #'(cl:lambda (ele) (cl:declare (cl:ignorable ele)) (cl:+ 4)))
+     4 (cl:reduce #'cl:+ (cl:slot-value msg 'roomTimes) :key #'(cl:lambda (ele) (cl:declare (cl:ignorable ele)) (cl:+ 8)))
+))
+(cl:defmethod roslisp-msg-protocol:ros-message-to-list ((msg <SearchResult>))
+  "Converts a ROS message object to a list"
+  (cl:list 'SearchResult
+    (cl:cons ':roomNames (roomNames msg))
+    (cl:cons ':roomIds (roomIds msg))
+    (cl:cons ':roomTimes (roomTimes msg))
+))

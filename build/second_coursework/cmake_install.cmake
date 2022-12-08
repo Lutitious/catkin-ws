@@ -47,6 +47,22 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/second_coursework/action" TYPE FILE FILES "/home/rahul/catkin_ws/src/second_coursework/action/Search.action")
+endif()
+
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/second_coursework/msg" TYPE FILE FILES
+    "/home/rahul/catkin_ws/devel/share/second_coursework/msg/SearchAction.msg"
+    "/home/rahul/catkin_ws/devel/share/second_coursework/msg/SearchActionGoal.msg"
+    "/home/rahul/catkin_ws/devel/share/second_coursework/msg/SearchActionResult.msg"
+    "/home/rahul/catkin_ws/devel/share/second_coursework/msg/SearchActionFeedback.msg"
+    "/home/rahul/catkin_ws/devel/share/second_coursework/msg/SearchGoal.msg"
+    "/home/rahul/catkin_ws/devel/share/second_coursework/msg/SearchResult.msg"
+    "/home/rahul/catkin_ws/devel/share/second_coursework/msg/SearchFeedback.msg"
+    )
+endif()
+
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/second_coursework/cmake" TYPE FILE FILES "/home/rahul/catkin_ws/build/second_coursework/catkin_generated/installspace/second_coursework-msg-paths.cmake")
 endif()
 
