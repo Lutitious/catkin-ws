@@ -28,19 +28,20 @@ class SearchServer(object):
                 if self._as.is_new_goal_available():
                     rospy.loginfo("New goal received")
                     goal = self._as.accept_new_goal()
-                if goal.request != "":
+                if goal.roomName != "":
                     state = "SEARCHING"
             elif state == "SEARCHING":
                 rospy.loginfo("SEARCHING")
-                feedback.feedback = ["object_1", "object_2", "object_3"]
-                feedback.feedback = [1, 2, 3]
+                feedback.roomNames = ["A", "B", "C", "D", "E", "F"]
+                feedback.roomIds = [1, 2, 3, 4, 5, 6]
                 self._as.publish_feedback
                 state = "FINISHED"
             elif state == "FINISHED":
                 rospy.loginfo("FINISHED")
-                result.result = ["object_1", "object_2", "object_3"]
-                result.result = [1, 2, 3]
-                result.time = rospy.Time.now()
+                if goal.roomName in feedback.roomNames:
+                    result.roomNames.append(goal.roomName)
+                    result.roomIds.append(feedback.roomIds[feedback.roomNames.index(goal.roomName)])
+                result.roomTimes.append(rospy.Time.now())
                 self._as.set_succeeded(result)
                 break
             rospy.sleep(1)
@@ -86,7 +87,7 @@ class RecognizeObjects(smach.State):
                 # Check if score is above threshold
                 if score > 0.5:
                     # Get class ID
-                    class_id = np.argmax(detection[5:])
+                    class_id = int(detection[4])
 
                     # Get label
                     label = str(self.classes[class_id])
