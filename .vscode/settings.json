@@ -5,4 +5,10 @@
         "${workspaceFolder}/devel/lib/python3/dist-packages",
         "/opt/ros/noetic/lib/python3/dist-packages"
     ],
+    "python.analysis.extraPaths": [
+        "/home/rahul/catkin_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3.10/site-packages",
+        "/opt/ros/noetic/lib/python3/site-packages",
+        "./devel/lib/python3.10/site-packages"
+    ],
 }
