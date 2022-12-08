@@ -1,2 +1,2 @@
-beginner_tutorials:second_coursework
--DCATKIN_DEVEL_PREFIX=/home/rahul/catkin-ws/devel -DCMAKE_INSTALL_PREFIX=/home/rahul/catkin-ws/install -G Unix Makefiles
+second_coursework
+-DCATKIN_DEVEL_PREFIX=/home/rahul/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/rahul/catkin_ws/install -G Unix Makefiles
